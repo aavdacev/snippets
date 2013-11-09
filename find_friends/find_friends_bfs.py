@@ -4,7 +4,7 @@ def find_friends(u1, u2, friends, max_depth):
   """
   paths_to_check = [[u1]]
   while paths_to_check:
-    curr_path = paths_to_check.pop()
+    curr_path = paths_to_check.pop(0)
     curr_node = curr_path[-1]
     if curr_node == u2:
       return curr_path
@@ -20,7 +20,7 @@ def find_friends2(u1, u2, friends, max_depth):
   nodes_to_visit = [u1]
   paths_to_node = {u1: []}
   while nodes_to_visit:
-    curr_node = nodes_to_visit.pop()
+    curr_node = nodes_to_visit.pop(0)
     curr_path = paths_to_node[curr_node] + [curr_node]
     if curr_node == u2:
       return curr_path
